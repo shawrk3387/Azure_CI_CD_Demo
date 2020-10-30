@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: shawrkazurecicddemo 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shawrkazurecicddemo
+  template:
+    metadata:
+      labels:
+        app: shawrkazurecicddemo 
+    spec:
+      containers:
+        - name: shawrkazurecicddemo 
+          image: azurecicdcontainerregistry.azurecr.io/shawrkazurecicddemo
+          ports:
+          - containerPort: 5000
